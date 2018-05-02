@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<WeedKillerConfigSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Created>2009-06-23T17:14:45.125-04:00</Created>
+  <Updated>2012-03-13T08:06:24.3933591-04:00</Updated>
+  <ExecutionServer />
+  <ConfigSet>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup -- Reg Expressions</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>%userprofile%\..\*\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>^(?!Cookies$|History$|Temporary\sInternet\sFiles$)</SubFolderPattern>
+      <SubFolderPattern_Evaluation>RegularExpression</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>RegularExpression</FilePattern_Evaluation>
+      <FilePattern>.+</FilePattern>
+      <ServerList />
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup -- Reg Expressions -- Current User Only</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>%userprofile%\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>^(?!Cookies$|History$|Temporary\sInternet\sFiles$)</SubFolderPattern>
+      <SubFolderPattern_Evaluation>RegularExpression</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>RegularExpression</FilePattern_Evaluation>
+      <FilePattern>.+</FilePattern>
+      <ServerList />
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup -- Wildcards</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>%userprofile%\..\*\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>*|&lt;Cookies|&lt;History|&lt;Temporary Internet Files</SubFolderPattern>
+      <SubFolderPattern_Evaluation>Wildcards</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>Wildcards</FilePattern_Evaluation>
+      <FilePattern>*</FilePattern>
+      <ServerList />
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup -- Wildcards -- Current User Only</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>%userprofile%\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>*|&lt;Cookies|&lt;History|&lt;Temporary Internet Files</SubFolderPattern>
+      <SubFolderPattern_Evaluation>Wildcards</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>Wildcards</FilePattern_Evaluation>
+      <FilePattern>*</FilePattern>
+      <ServerList />
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup (Server List) -- Reg Expressions</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>\\&lt;SERVER&gt;\c$\Documents and Settings\*\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>^(?!Cookies$|History$|Temporary\sInternet\sFiles$)</SubFolderPattern>
+      <SubFolderPattern_Evaluation>RegularExpression</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>RegularExpression</FilePattern_Evaluation>
+      <FilePattern>.+</FilePattern>
+      <ServerList>MYSERVER-01,MYSERVER-02</ServerList>
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup (Server List) -- Wildcards</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>\\&lt;SERVER&gt;\c$\Documents and Settings\*\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>*.*|&lt;Cookies|&lt;History|&lt;Temporary Internet Files</SubFolderPattern>
+      <SubFolderPattern_Evaluation>Wildcards</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>Wildcards</FilePattern_Evaluation>
+      <FilePattern>*</FilePattern>
+      <ServerList>MYSERVER-01,MYSERVER-02</ServerList>
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- User Temp Folder Cleanup [Server List] -- Reg Expressions -- Current User Only</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>\\&lt;SERVER&gt;\c$\Documents and Settings\%UsErNaMe%\Local Settings\Temp</RootFolder>
+      <SubFolderPattern>^(?!Cookies$|History$|Temporary\sInternet\sFiles$)</SubFolderPattern>
+      <SubFolderPattern_Evaluation>RegularExpression</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>RegularExpression</FilePattern_Evaluation>
+      <FilePattern>.+</FilePattern>
+      <ServerList>MYSERVER-01,MYSERVER-02</ServerList>
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+    <WeedKillerConfig>
+      <Description>MS Windows -- Windows Temp Folder Cleanup -- Wildcards</Description>
+      <Enabled>true</Enabled>
+      <RootFolder>%windir%\Temp</RootFolder>
+      <SubFolderPattern>*|&lt;Cookies|&lt;History|&lt;Temporary Internet Files</SubFolderPattern>
+      <SubFolderPattern_Evaluation>Wildcards</SubFolderPattern_Evaluation>
+      <FilePattern_Evaluation>Wildcards</FilePattern_Evaluation>
+      <FilePattern>*</FilePattern>
+      <ServerList />
+      <AgeMetric>7</AgeMetric>
+      <AgeMeasureUnit>Days</AgeMeasureUnit>
+      <FileEval>Modified</FileEval>
+      <TestOnly>true</TestOnly>
+      <RecurseSubFolders>true</RecurseSubFolders>
+      <SubFoldersOnly>false</SubFoldersOnly>
+      <RemoveEmptyFolders>true</RemoveEmptyFolders>
+      <IgnoreZeroLength>false</IgnoreZeroLength>
+      <Aggressive>true</Aggressive>
+      <MinimumRetentionCount>0</MinimumRetentionCount>
+      <MaximumRetentionCount>2147483647</MaximumRetentionCount>
+    </WeedKillerConfig>
+  </ConfigSet>
+</WeedKillerConfigSet>

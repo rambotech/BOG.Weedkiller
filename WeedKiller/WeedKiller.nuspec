@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WeedKiller</id>
+    <version>1.0.7</version>
+    <authors>jschultz</authors>
+    <owners>jschultz</owners>
+    <licenseUrl>https://github.com/rambotech/BOG.Framework/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rambotech/BOG.Framework</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+    WeedKiller is a class to surgically remove aged files from folders, and is intended for applications
+    which will self-manage their own file growth. This is the core class doing the heavy lifting of the Weed Killer 
+    project.  See the project link for more details.    
+    </description>
+    <releaseNotes>
+    Incorporates the existing WeedKiller class (1.0.7) into a NuGet package.
+    </releaseNotes>
+    <copyright>Copyright (c) 2016, John J Schultz</copyright>
+    <tags>File Management Tag2</tags>
+    <dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>
+  </metadata>
+</package>
