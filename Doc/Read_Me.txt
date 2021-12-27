@@ -3,6 +3,9 @@ Weed Killer
 
 Version History: -------------------------------------------------------
 
+v1.1.0.1 -- Dec 27, 2021
+  - Update projects to .NET Framework 4.8
+
 v1.1.0.0 -- May 1, 2018
   - Migrated to Github
   - Update projects to .NET Framework 4.6.1
