@@ -14,9 +14,9 @@
     project.  See the project link for more details.    
     </description>
     <releaseNotes>
-    Incorporates the existing WeedKiller class (1.0.7) into a NuGet package.
+    Updates to .NET Framework 4.8
     </releaseNotes>
-    <copyright>Copyright (c) 2016, John J Schultz</copyright>
+    <copyright>Copyright (c) 2016-, John J Schultz</copyright>
     <tags>File Management Tag2</tags>
     <dependencies>
       <dependency id="SampleDependency" version="1.0" />

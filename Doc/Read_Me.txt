@@ -2,6 +2,8 @@ Weed Killer
 ===========
 
 Version History: -------------------------------------------------------
+v1.1.0.2 -- Feb 15, 2022
+  - Replaces the iinstaller projects with 
 
 v1.1.0.1 -- Dec 27, 2021
   - Update projects to .NET Framework 4.8

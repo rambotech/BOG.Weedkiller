@@ -53,16 +53,15 @@ namespace WeedKillerDevExample
             if (RequiredLoggingLevel > 2)
             {
                 // Where do you want your properties to go today?  You decide, but here is what you have.
-                string s;
-                s = Enum.GetName(typeof(WeedKillerEventArgs.WeedKillerActionType), e.Action);
-                s = e.Success ? "Success" : "FAIL";
-                s = e.TestMode ? "Testing" : "Actual";
-                s = e.Message;
-                s = e.Path;
-                s = e.FileName;
-                s = e.TimeStamp.ToString();
-                s = e.Size.ToString();
-                s = e.Size_Recovered.ToString();
+                // s = Enum.GetName(typeof(WeedKillerEventArgs.WeedKillerActionType), e.Action);
+                // s = e.Success ? "Success" : "FAIL";
+                // s = e.TestMode ? "Testing" : "Actual";
+                // s = e.Message;
+                // s = e.Path;
+                // s = e.FileName;
+                // s = e.TimeStamp.ToString();
+                // s = e.Size.ToString();
+                // s = e.Size_Recovered.ToString();
             }
         }
 
