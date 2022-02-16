@@ -10,8 +10,6 @@ Written in C#. Migrated from SourceForge. Updated to run with .NET Framework 4.8
 ## Tester 
 ![alt text](https://github.com/rambotech/BOG.Weedkiller/blob/develop/Assets/screenshot_tester.jpg)
 
-Assests\screenshot_manaqger.jpg
-
 ## Overview 
 Weed Killer is a .NET solution to prune aged files from folders, working equally well on a single workstation, 
 or multiple data centers. It consists of 
