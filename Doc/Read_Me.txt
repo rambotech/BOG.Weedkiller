@@ -2,8 +2,12 @@ Weed Killer
 ===========
 
 Version History: -------------------------------------------------------
+v1.1.0.3 -- May 5, 2023
+  - Add github workflow
+  - .NET 4.8 to 4.8.1
+
 v1.1.0.2 -- Feb 15, 2022
-  - Replaces the iinstaller projects with 
+  - Replaces the iinstaller projects with WIX Installer (work in progress)
 
 v1.1.0.1 -- Dec 27, 2021
   - Update projects to .NET Framework 4.8

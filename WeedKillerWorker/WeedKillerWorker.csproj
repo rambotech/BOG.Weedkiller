@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WeedKiller</RootNamespace>
     <AssemblyName>WeedKillerWorker</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>icon\CLEANUP.ICO</ApplicationIcon>
     <NoWin32Manifest>true</NoWin32Manifest>

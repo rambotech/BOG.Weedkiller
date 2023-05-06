@@ -6,8 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{6D9A16F7-D727-4462-8DA4-F95C1E0FA611}"
 	ProjectSection(SolutionItems) = preProject
 		Doc\License_Installation_Dialog.txt = Doc\License_Installation_Dialog.txt
-		Doc\Read_Me.txt = Doc\Read_Me.txt
 		README.md = README.md
+		Doc\Read_Me.txt = Doc\Read_Me.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{3E574888-51C4-4564-A102-F69C47E836DA}"
@@ -28,6 +28,13 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "WeedKillerManager_Installer", "WeedKillerManager_Installer\WeedKillerManager_Installer.wixproj", "{26ACAF82-FC27-4576-8BD1-D7998FC19995}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "WeedKillerWorker_Installer", "WeedKillerWorker_Installer\WeedKillerWorker_Installer.wixproj", "{14647396-C61F-4D50-AC91-A33BE706B3BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{F6756100-5200-4AD1-8329-80E1F5049A1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{F87D0038-13FC-42CB-BC58-039924BB18C8}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +99,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{26ACAF82-FC27-4576-8BD1-D7998FC19995} = {FB37D0D4-E8C3-4C0D-BE53-94A1B534DD48}
 		{14647396-C61F-4D50-AC91-A33BE706B3BB} = {FB37D0D4-E8C3-4C0D-BE53-94A1B534DD48}
+		{F87D0038-13FC-42CB-BC58-039924BB18C8} = {F6756100-5200-4AD1-8329-80E1F5049A1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F297E648-71C0-4A92-8402-2865B2FDB9F8}

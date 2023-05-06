@@ -1,0 +1,32 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "develop", "release", "master" ]
+
+defaults:
+  run:
+    working-directory: src
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: |
+        dotnet build --no-restore -c release ./BOG.WeedKiller/BOG.WeedKiller.csproj
+    - name: NuGet package publish (BOG.WeedKiller)
+      if: github.event.ref == 'refs/heads/master'
+      env:
+        NGKEY: ${{ secrets.NUGET_API_KEY }}
+        NGSRC: ${{ vars.NUGET_SOURCE }}
+      run: |
+        dotnet nuget push ./BOG.WeedKiller/bin/release/BOG.WeedKiller.*.nupkg --api-key ${NGKEY} --source ${NGSRC} --skip-duplicate
