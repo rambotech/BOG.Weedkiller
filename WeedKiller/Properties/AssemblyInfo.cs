@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bits of Genius (tm)")]
 [assembly: AssemblyProduct("WeedKiller")]
-[assembly: AssemblyCopyright("Copyright ©  2009-2018")]
+[assembly: AssemblyCopyright("Copyright � John J Schultz, usage restricted to terms of the Microsoft Public License.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

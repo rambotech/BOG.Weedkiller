@@ -1,7 +1,7 @@
-﻿// WeedKiller.exe -- prune files according to an xml config file.
+// WeedKiller.exe -- prune files according to an xml config file.
 // The configuration file is built by the Weed Killer Manager.
 //
-// Copyright (c) 2009-2016, John J Schultz, usage restricted to terms of the Microsoft Public License.
+// Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 // 
 // WeedKillerWorker.exe [switches] {config_file.wkconf} [...]
 //

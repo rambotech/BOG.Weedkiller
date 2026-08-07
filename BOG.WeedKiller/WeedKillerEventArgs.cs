@@ -90,7 +90,6 @@ namespace BOG.WeedKiller
 			get { return _DoingRecursion; }
 		}
 
-
 		public WeedKillerEventArgs(WeedKillerActionType actionType, string pathName, string fileName, DateTime timeStamp, double size, double sizeRecovered, bool testmode, bool doingRecursion, bool success, string message)
 		{
 			this._Action = actionType;

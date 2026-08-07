@@ -1,0 +1,515 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>Weed Killer</title>
+    <style type="text/css">
+        .style1
+        {
+            font-weight: normal;
+        }
+        .style2
+        {
+            font-weight: bold;
+        }
+        .style3
+        {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <a name="#top" />
+    <center>
+        <h2 style="border: 0px; background-color: #FFFFFF;">
+            Weed Killer, Ver. 1.0.6</h2>
+    </center>
+    <div>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#weedkillermanager">Weed Killer Manager</a></li>
+            <ul>
+                <li><a href="#createloadsave">Creating, Loading and Saving</a></li>
+                <li><a href="#configurationproperties">Configuration Properties</a></li>
+                <li><a href="#testingexecuting">Testing / Executing a configuration</a></li>
+                <ul>
+                    <li><a href="#customizingthetester">Customizing the Tester</a></li>
+                </ul>
+                <li><a href="#notesonfilestorage">Notes on File Storage</a></li>
+            </ul>
+            <li><a href="#weedkillerworker">Weed Killer Worker</a></li>
+            <li><a href="#legal">Legal</a></li>
+            <li><a href="#fordevelopersonly">For Developers Only</a></li>
+        </ul>
+    </div>
+    <a name="overview"></a>
+    <h2 style="border: 1px #0000DD; background-color: #DDDDFF;">
+        Overview</h2>
+    <p>
+        Weed Killer is a highly-scalable, aged-file removal application, supporting scopes
+        from only the local workstation to sets of data centers.</p>
+    <p>
+        Weed Killer has two parts:</p>
+    <ul>
+        <li><b><i>Weed Killer Manager</i></b>: The GUI manager for configurations, which can
+            also execute the configuration files manually.</li>
+        <li><b><i>Weed Killer Worker</i></b>: A console application to delegate the aged-file
+            removal, specified within the configurations created by the Manager.&nbsp; It is
+            intended for installation at a master or admin server within a data center, launching
+            periodically as a scheduled task..</li>
+    </ul>
+    <a name="weedkillermanager"></a>
+    <h4 style="border: 1px #0000DD; background-color: #DDDDFF;">
+        Weed Killer Manager</h4>
+    <p>
+        This application allows the creation, storage, management, testing and direct execution
+        of a configuration. Each form created here contains one configuration set, stored
+        in a single XML file, which is a collection of zero or more configurations. Each
+        configuration describes:</p>
+    <ul>
+        <li>a specific starting location (root folder) on either a single workstation, or on
+            multiple servers.</li>
+        <li>a specific pattern of files targeted for aged removal.</li>
+        <li>metrics for determining when a file should perish, and options unique to this location.</li>
+    </ul>
+    <a name="createloadsave"></a>
+    <h4>
+        Creating, Loading and Saving</h4>
+    <p>
+        To create a new configuration set, use File / New. To open an existing configuration
+        set from a file, use File / Open.&nbsp; You can also launch a configuration file
+        from Windows Explorer by double-clicking on an existing configuration file (*.wkconfig).&nbsp;
+        A set editor form will open.</p>
+    <p>
+        A set editor has two parts: the top part contains the list of configurations (initially
+        empty), and the lower portion containing the properties for that configuration.</p>
+    <p>
+        To <b>add</b> a new configuration within the editor, click the add button. Optionally
+        change the description in the dialog, and press OK to create the new configuration
+        entry.
+    </p>
+    <div style="background-color: #FFE8E8; margin: 5px 50px 5px 50px; border: dashed 1px #800000">
+        <div style="background-color: #FFE8E8; margin: 2px 5px 2px 5px; border: 0px">
+            Descriptions are not unique keys and can duplicate.&nbsp; They are used in the tester,
+            and in the console output of Weed Killer Worker to describe a particular configuration
+            being executed; therefore, unique names are recommended although they are not enforced.
+        </div>
+    </div>
+    <p>
+        To <b>edit</b> a configuration in a set editor form, click on it's description in
+        the list. This will display the configuration's properties in the lower window.
+        To modify the properties, click on a property value in the right column and change
+        it. After finishing all changes to the properties, click either the Accept or Cancel
+        button when done. <i>Note: Accepting a change only changes the configuration in memory:
+            it does not persist the changed configuration set to a file.</i></p>
+    <p>
+        To <b>copy</b> a configuration, click on one or more descriptions in the list: hold
+        down the Ctrl key for multiple selections.&nbsp; Select Edit / Copy from the menu
+        (or the shortcut Ctrl+C). The status bar will display a message confirming the content
+        was copied to the clipboard.&nbsp; To copy the configuration(s) withinin the same
+        set, simply select Edit / Paste (or the shortcut Ctrl+V) in the same set editor
+        form. To create the configuration in a different set, simply select the set editor
+        form containing the target set, then paste.&nbsp; The created configuration will
+        have &quot;Copy of &quot; prefixed to the description.</p>
+    <p>
+        To <b>delete</b> a configuration, click on one or more descriptions in the list,
+        then click the delete button. A dialog box will ask for confirmation before removing
+        the entry.</p>
+    <p>
+        To <b>save</b> changes to the configuration set to a file, use File / Save. If the
+        configuration set has not been saved, select the location and enter the name of
+        the file in the dialog which appears.&nbsp; As part of the save, a dialog will appear
+        to allow limiting the execution of the configuration file to certain servers.&nbsp;
+        If the configurations in the set use UNC paths for the root folder, you can elect
+        to specify any server.&nbsp; If logical drive specifiers are used, you can enter
+        the server/workstation name(s) where the configuration should run from.&nbsp; An
+        entry here instructs the Weed Killer Worker to ignore the file, if it&#39;s server
+        name is not listed.&nbsp;
+    </p>
+    <p>
+        The configuration can also be saved to a specific file using one of two options
+        in the File menu:<b> Save As</b>, or <b>Publish</b>. The <b>Save As</b> option will
+        persist the content in a separate file you specify, and will also set this new file
+        as the location for subsequent saves. <b>Publish</b> will create or overwrite the
+        content in a separate file you specify, but will retain the current file name associated
+        with the configuration set for subsequent saves. Publishing is a way of editing
+        a working file, and copying the configuration set to a separate file used by the
+        Weed Killer Worker console application, after the changes are validated and ready
+        for use.</p>
+    <a name="configurationproperties"></a>
+    <h4>
+        Configuration Properties</h4>
+    <p>
+        The properties for a configuration have a description at the bottom of the property
+        grid, when the specific property is selected. The following provides more detail
+        for property behavior in certain contexts, or specific examples.</p>
+    <ul>
+        <li><b>Description</b>: Descriptive text to identify this particular configuration.
+            It will appear in the console worker application's output, and in the tester.</li>
+        <li><b>Enabled</b>: This option allows an entry to be dormant, and not processed by
+            Weed Killer Worker when set to false. It can still be run in test mode by the testing
+            form in the Manager. It differs from <b>Test Only</b>, which will actually allow
+            Weed Killer Worker to process the configuration, but will not delete anything.</li>
+        <li><b>File pattern</b>: This is either a regular expression or a wildcard pattern to
+            specify the file name patterns included in the process. Specify all files by ".+"
+            (dot plus-sign, meaning any character) for a regular expression, or &quot;*&quot;
+            for wildcards. This is a global pattern for all files within the root and its subfolders,
+            processed by this configuration. Set up separate configurations if the file pattern
+            will vary among subfolders.<p>
+                While a single regular expression can be written to specify single or multiple inclusion
+                and exclusion patterns within the expression itself, wildcards can not natively
+                do this. Weed Killer implements two optional extensions to wildcard patterns:
+                <ol>
+                    <li>Multiple patterns, separated by a pipe-symbol:&nbsp; e.g.&nbsp;&nbsp;&nbsp; *.XML|*.TXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (all XML and text files: others are not included)</li>
+                    <li>A negation mark ahead of the wildcard pattern, symbolized by a less-than sign.&nbsp;&nbsp;
+                        e.g.&nbsp;&nbsp; *.*|&lt;*.XML&nbsp;&nbsp; (all files, but NOT XML files). Note:&nbsp;
+                        A pattern can not specifiy only negated pattens.&nbsp; There must be at least one
+                        positive pattern for any files to be included.&nbsp; E.g. &quot;&lt;*.XML&quot;
+                        by itself will not qualify any files.</li>
+                </ol>
+                <p>
+                    Note: Once a file is specified in a negation (i.e. exclusion) pattern, it can not
+                    be re-included by a positive pattern after that point.&nbsp; So when the file pattern
+                    is &lt;*.XML|*.*, all files except XML files would still be qualified.&nbsp; This
+                    makes the order of appearance in the pattern insignificant:&nbsp; *.*|&lt;*.XML|&lt;*.TXT
+                    or &lt;*.XML|&lt;*.TXT|*.* have the same end result: no XML and text files, process
+                    all others.</p>
+            <p>
+                    <b>Group File Pattern:</b> This is not used when blank.&nbsp; When used, the 
+                    group file pattern creates subsets of files within the broader file pattern.&nbsp; 
+                    Each group then uses the age/min/max parameters within the subset. Use the 
+                    following file set within a single folder as an example:<ul>
+                    <li>AAAA_20130620.txt</li>
+                    <li>AAAA_20130621.txt</li>
+                    <li>BBBB_20130620.txt</li>
+                    <li>BBBB_20130622.txt</li>
+                    <li>CCC_20130622.txt</li>
+                    <li>DD_20130623.txt</li>
+                    </ul>
+        </li>
+        <p>
+            Normally, a regex file pattern of .{4}_[\d]{8}\.txt would treat all four of the 
+            five files in this folder as a single set.&nbsp; So on 6/24, a 2-day perish with 
+            a minimum retention of 1 would delete AAAA_20130620.txt, AAAA_20130621.txt and 
+            BBBB_20130620.txt.&nbsp; It would leave BBBB_20130622.txt and CCC_20130622.txt</p>
+        <p>
+            If a superset is created with the pattern .{4}_, so that all AAAA_ and BBBB_ 
+            files become sets, then the 2-day persish with a minimum retention of 1 day 
+            implemented on 6/24 removes AAAA_20130620.txt and BBBB_20130620.txt only.&nbsp; 
+            The other file must be spared for the minimum count of 1.&nbsp; The files 
+            CCC_20130622.txt and DD_20130623.txt are then the remainders in their own group, 
+            since they are outside of the group pattern.&nbsp; They are handled as their own 
+            group, causing CCC_20130622.txt to be deleted, and DD_20130623.txt to be spared.
+        </p>
+        <p>
+            This group pattern is designed to handle cases where
+        </p>
+        <li><b>File pattern expressison typee</b>: Specifies how the file pattern is evaluated:
+            as a regular expression or a wildcard pattern.</li>
+        <li><b>Root Folder</b>: The root folder can represent an absolute path on a logical
+            drive (e.g. &quot;C:\path\...&quot;), or a UNC resource (e.g. &quot;\\SomeComputer\HiddenShare$\path\...&quot;)
+            which is the starting folder for the specific configuration. It can also embed environment
+            variable references, e.g. %USERPROFILE%\ApplicationData<p>
+                The root folder can also use a placeholder, "&lt;SERVER&gt;" (e.g. "\\&lt;SERVER&gt;\SharedFolder\Path\...")
+                to represent one member from a list of servers. The placeholder enables iteration
+                of this path over a list of like/redundant servers, in a UNC . See Server List for
+                details. Either &lt;SERVER&gt; or &lt;server&gt; can be used for the placeholder.</p>
+            <p>
+                The root folder can also use wildcard patterns at any folder level (e.g. C:\Documents
+                and Settings\*.*\Local Settings\Temp ..or.. %userprofile%\..\*.*\Local Settings\Temp),
+                which causes the root folder to repeat for all folders matching the wildcard pattern(s).
+                This, combined with the &lt;SERVER&gt; placeholder, is a very powerful feature:
+                see the example configuration files for some practical examples.</p>
+        </li>
+        <li><b>Server List</b>: This list is ignored, if the &lt;SERVER&gt; placeholder is not
+            used in Root Folder. Servers in this list can be separated by any of the following
+            characters: space, colon or comma. So "SERVER1|SERVER2,SERVER3 SERVER4" would be
+            read as four distinct server names, and could also be represented as "SERVER1 SERVER2
+            SERVER3 SERVER4".&nbsp; So when the root folder specifies &quot;\\&lt;SERVER&gt;\SharedFolder\TempFiles&quot;,
+            this list would cause execution on &quot;\\SERVER1\SharedFolder\TempFiles&quot;,
+            &quot;\\SERVER2\SharedFolder\TempFiles&quot;, &quot;\\SERVER3\SharedFolder\TempFiles&quot;,
+            and &quot;\\SERVER4\SharedFolder\TempFiles&quot;</li>
+        <li><b>Sub Folder Pattern</b>: This is the same as the file pattern, but it is applied
+            to sub-folders when recurse subfolders is selected.&nbsp; It has no effect on any
+            part of the root folder, even when wildcards appear in the root folder.&nbsp; The
+            pattern must match the subfolder name being processed, regardless of depth during
+            recursion.</li>
+        <li><b>Sub folder pattern expressison type</b>: Specifies how the folder pattern is
+            evaluated: as a regular expression or a wildcard pattern. The file and folder patterns
+            are allowed to use different types.</li>
+        <li><b>Age Measurement Base</b>: specifies one of the three date properties on a file,
+            which is used as the file's "age" for determing if the file should perish. The choice
+            made has the following impact on when a file will perish:<ul>
+                <li>If Creation Date is chosen, the file essentially perishes after the allotted timespan
+                    in Age Metric and Age Metric Base (e.g. the default: 7 days). This means that if
+                    a user opens the file and makes changes to it, the time the file will perish is
+                    not impacted.</li>
+                <li>If Modification Date is chosen, a user opening the file and making a change will
+                    reset the Modification Date to the current time, extending the life of the file.</li>
+                <li>If Accessed Date is chosen, a user simply opening the file will extend the life
+                    of the file.</li>
+            </ul>
+        </li>
+        <li><b>Age Metric</b>: This is the number portion of the file's life span</li>
+        <li><b>Age Metric Unit</b>: This specifies what the age metric represents: years, months,
+            days... milliseconds.</li>
+        <li><b>Aggressive</b>: When true, the process will not safeguard files with a readonly
+            attribute, making them subject to removal.</li>
+        <li><b>Ignore zero-length</b>: sometimes a zero-length file indicates a process failure,
+            or older applications can use them a semaphores.&nbsp; Enabling this option will
+            exclude these files from removal.</li>
+        <li><b>Minimum Retention Count:</b> Minimum retention count can be set to non-zero to
+            always keep a certain count of the freshest files even though they may qualify for
+            deletion.&nbsp; This can be used to retain a few of the latest files in a queue,
+            should the regular stream of files stop arriving.&nbsp; E.g. Files arrive daily,
+            and are purged after 7 days.&nbsp; No file is created in the folder for 10 days.&nbsp;
+            When this option is set to 0, there are no files left in the folder.&nbsp; When
+            set to 1, the most recent file is preserved, providing evidence of when the last
+            file was created.</li>
+        <li><b>Maximum Retention Count</b>: Maximum retention count is a way to protect your
+            disk storage against flooding.&nbsp; When set to a lower value, it will only keep
+            the specified count of newest files, regardless of whether the overage would be
+            deleted or not.&nbsp; Example: Files in a queue perish after 2 days, and normally
+            arrive once every hour, so there are normally no more than 48 files in the queue.&nbsp;
+            A system problem causes files to be posted every 15 seconds.&nbsp; Within 1 hour,
+            240 files are in the folder, and within 48 hours, 11520 files.&nbsp; If each file
+            were 1 Mb in size, the disk space consumed is now 11.52 Gigabytes, instead of 48
+            Megabytes.&nbsp; By setting the Maximum Retention Count to 100, the space consumed
+            should not exceed 160Mb if WeedKillerWorker is running every 15 minutes or so.</li>
+        <li><b>Recurse Sub-folders and Sub-Folders only</b>: to process files in only the root
+            folder, both options must be false.&nbsp; To process files in the root and sub-folders,
+            Recurse Sub-folders is true, Sub-Folders only is false.&nbsp; To process files only
+            in sub-folders (i.e. ignore the files in the root folder iself), Recurse Sub-folders
+            is true, Sub-Folders only is true.&nbsp; The remaining combination of Recurse Sub-folders
+            is false, Sub-Folders only is true would exclude all files and is invalid.</li>
+        <li><b>Remove Empty Folders</b>: this option is ignored when <b>Recurse Sub-Folders</b>
+            is false.&nbsp; When set to true, a sub-folder will be deleted if processing it
+            has resulted in removal of all of its files and folders.&nbsp; Normally, an empty
+            folder is not removed.</li>
+        <li><b>Sub-folders only</b>: this option is ignored when <b>Recurse Sub-Folders</b>
+            is false.&nbsp; When set to true, a sub-folder will be deleted if processing it
+            has resulted in removal of all of its files and folders.&nbsp; Normally, an empty
+            folder is not removed.</li>
+        <li><b>Sub-folders only</b>: This option forces Weed Killer Worker to not process the
+            root folder itself, or any file in the root folder itself. It will only process
+            the subfolders. If the folder contains setting files or log files, etc, in the root
+            folder, and the data is in subfolders, this needs to be set to true to protect those
+            setting/log files.</li>
+        <li><b>Testing Only</b>: This option forces Weed Killer Worker to process the configuration
+            when Enabled is set to true, but not actually delete any files or folders.&nbsp;
+            It is useful to validate the configuration&#39;s visibility and behavior on the
+            admin or master server, when executed by Weed Killer Worker.</li>
+    </ul>
+    <a name="testingexecuting"></a>
+    <h4>
+        Testing / Executing a configurationon</h4>
+    <p>
+        <span class="style1">To test or execute a configuration within the Manager, either double-click
+            on a configuration&#39;s description in the configuration list, or single click
+            on a configuration description and click Tools / Test Selected Configuration from
+            the menu. A tester form will launch. </span>
+    </p>
+    <p>
+        <span class="style1">The tester can force the configuration to run in test mode (where
+            nothing is actually deleted), by marking the checkbox.&nbsp; If the checkbox is
+            disabled, it means that the </span><span class="style2">Enabled</span><span class="style1">
+                option is set to false, or the </span><span class="style2">Testing Only</span><span
+                    class="style1"> option is set to true.&nbsp; This forces the tester to run only
+                    in test mode.&nbsp; Only one tester window can be open and running at a time.</span></p>
+    <p class="style3">
+        For testing against large quantities of folder and files, mark the checkbox labeled
+        &quot;Stop after this count of events&quot;, which will enable the slider to set
+        the number of events to stop at.&nbsp; This allows only a subset of files to quickly
+        che.</p>
+    <div style="background-color: #FFE8E8; margin: 5px 50px 5px 50px; border: dashed 1px #800000">
+        <div style="background-color: #FFE8E8; margin: 2px 5px 2px 5px; border: 0px">
+            <i><b>CAUTION</b></i>: If the check box &quot;Force Test Mode&quot; is enabled but
+            not checked, files and/or folders will actually be deleted according to the options
+            set in the configuration. The Tester will display this warning in a dialog box.&nbsp;
+            If you are not using the Worker application, this is how you remove aged files using
+            just the Manager.</div>
+    </div>
+    <p>
+        Click the launch button, and wait for the results. The results will be displayed
+        in a grid, one row per file/directory.&nbsp; Note: actual file removal is marked
+        by the word &quot;Live&quot; in the mode column, instead of the word &quot;Test&quot;.</p>
+    <a name="customizingthetester"></a>
+    <p>
+        <i>Customizing the Tester</i></p>
+    <p>
+        You may uncheck specific events in the checked list box, before or after running
+        a test.&nbsp; The test results in the grid, if any, will be adjusted as events are
+        checked/unchecked.&nbsp; You may also bulk adjust the events you enable with the
+        Select All, Clear All and Invert All.</p>
+    <p>
+        You may also change the foreground/background colors for an event type.&nbsp; Select
+        the event you wish to change, and click Adjust FG or Adjust BG buttons, then select
+        the color you want.&nbsp; Any existing entries in the result grid will be adjusted
+        once the OK button is clicked in the color dialog.</p>
+    <p>
+        Settings can be saved and loaded as templates, for later reuse.&nbsp; Save 
+        Template will default to the currently selected template to update it, or a new 
+        name can be entered to save the current selections as a new template.&nbsp; The Drop template button will 
+        remove the selected template.</p>
+    <p>
+        NOTE: There are four pre-defined templates including in the installation: 
+        DEFAULT (which shows everything), Removed_Only, Spared_Only and No_Matches.</p>
+    <a name="notesonfilestorage"></a>
+    <h4>
+        Assigning NT Permissions to the targeted folders</h4>
+    <p>
+        When the configuration is intended to be run by the Worker console application,
+        it may be necessary to give delete permission to the NT account which is the "run
+        as" account on the scheduled task.<br />
+        To do this ...
+        <ol>
+            <li>Select the window containing the configuration file containing the configurations
+                to apply or remove the permission. </li>
+            <li>On the menu, select Tools / NT Permission</li>
+            <li>In the dialog which appears, select the radio button for Add or Remove</li>
+            <li>In the NT Account box, enter the local or domain credential which is allowed to
+                remove files and/or folders.</li>
+            <li>Click the Apply button. The process will iterate through all entries, resolving
+                all root folders when server lists and/or wildcard are found.</li>
+            <li>Wait for the Apply button to become re-enabled, then review the text in the results
+                box to determine if any ACL change was not applied (i.e. any folder not marked as
+                "OK"). Application to UNC locations may take much longer.</li>
+        </ol>
+        Alternatively, the Weed Killer Worker can be run with an additional parameter to
+        apply or remove permissions as it is processing the configurations. See the Weed
+        Killer Worker parameters for more details.
+        <p>
+            The specific permissions applied to the file system root folder are:
+            <ul>
+                <li>ListDirectory</li>
+                <li>Traverse</li>
+                <li>Delete</li>
+                <li>DeleteSubdirectoriesAndFiles</li>
+                <li>ContainerInherit</li>
+                <li>ObjectInherit</li>
+            </ul>
+        </p>
+        <p>
+            <i>Note: If the location is a UNC path, and the server is not on a domain, assigning
+                permission over the network may not be allowed. This application of permissions
+                is only done to the ACL's on the file system and does not have any effect on the
+                network share permissions themselves.</i></p>
+    </p>
+    <h4>
+        Notes on file storage</h4>
+    <p>
+        Weed Killer Manager can detect when it is not being shutdown by the user (e.g. Task
+        Manager, Windows Shutdown), and will attempt to save any unsaved configuration set,
+        or any configuration set not current with its file content, into a temporary file.&nbsp;
+        This condition will be detected and the temporary files should be automatically
+        recovered the next time the application is launched.</p>
+    <a name="weedkillerworker"></a>
+    <h4 style="border: 1px #0000DD; background-color: #DDDDFF;">
+        Weed Killer Worker</h4>
+    <i>This application is only needed where the file pruning is delegated to a scheduled
+        task, and especially when one or more data centers are involved.</i>
+    <p>
+        This console application takes one or more file names as parameters, which contain
+        the configuration sets to process.&nbsp; The filenames may also use wildcards (e.g.
+        C:\MyConfigFiles\*.wkconf). All output is to the console, so the application can
+        be launched from a command file, and the standard output can be captured in a file.
+        E.g.</p>
+    <div>
+        WeedKillerWorker.exe "\\server\it_share$\Configuration1.xml" &quot;\\server\it_share$\Configuration2.xml&quot;&gt;
+        output.txt 2&gt;>&amp;1
+        <p>
+            In addition, there are two optional switches:</p>
+        <ul>
+            <li><b>/L:#</b> or <b>/logging_level:#</b> filters the types of events written to the
+                console output. # is a number 0 to 3, with zero being minimal logging, increasing
+                in detail through 3, which writes all event details to the console.</li>
+            <li><b>/S</b> or <b>/short</b> reduces the console output to only the file timestamp,
+                and the file&#39;s full path.</li>
+            <li>/C or /c: includes a summary line at the end of each server iteration, and at the
+                end of the configuration, which reports the number of files deleted, and the estimated
+                number of bytes recovered.&nbsp; The actual recovered storage can be higher than
+                reported.</li>
+            <li><b>/T</b> or <b>/test</b> forces all configurations to test mode, regardless of
+                their individual values within each configuration.</li>
+            <li><b>/P+:{account}</b>or <b>/permission_add:{account}</b> will assign a local or domain
+                NT account to a root folder&#39;s ACL, and grant list contents and deletion access
+                to that account.&nbsp; See clarification below.</li>
+            <li><b>/P-:{account}</b>or <b>/permission_remove:{account}</b> will remove a local or
+                domain NT account from a root folder&#39;s ACL&nbsp; See clarification below.</li>
+        </ul>
+        <p>
+            <b>/permission_add</b> and <b>/permission_remove</b> are designed to allow domain
+            administrators to specify an NT account, which will be used as the credentials for
+            running the Weed Killer Worker console application from a scheduled task.&nbsp;
+            By running the worker with one of these parameters under an Administrator&#39;s
+            credentials, Weed Killer Worker can take the specified credential and add or remove
+            the ACL to the folder &quot;on-the-fly&quot; as it processes folders.&nbsp; This
+            is an alternate form to assigning/removing the credential in the ACL in Weed Killer
+            Manager.</p>
+        <p>
+            Typically, when this technique is used, the /permission_add parameter is a part
+            of the automated launch of the Worker, and contains the credential of the NT account
+            in the scheduled task itself. Normally, this will not give have the access to give
+            itself the permission to delete files. The console application will also only display
+            an error for permission assignment, and move on to actually process the configuration.</p>
+        <p>
+            But, when an administrator logs into the box and runs the command line manually,
+            the permissions are then successfully assigned to the specificed NT account. <i>This
+                approach is recommended when IT delegates Weed Killer configuration building, and
+                lack of the deletion ability actually blocks a bad entry from deleting files. IT
+                executes the command line manually to update the permissions and allow the actual
+                deletion to occur, only when there is confidence that the configuration is valid
+                and trusted. </i>
+        </p>
+        <p>
+            The console application will return exit code (errorlevel) 0 for a fatal error,
+            or 1 if successful.</p>
+        <hr />
+        <p>
+            <b>Best practice: </b>Create a scheduled task for the command file, which runs every
+            several minutes to hours, etc, depending on the frequency that files need to be
+            purged to maintain free space needs.</p>
+        <a name="fordevelopersonly"></a>
+        <h4 style="border: 1px #0000DD; background-color: #DDDDFF;">
+            For Developers Only</h4>
+        <h4>
+            <i>(WeedKiller project)</i></h4>
+        <p>
+            This is the class which does the heavy lifting of file/folder examination and removal.
+            It can be referenced in your own project to integrate temp file management, file
+            queue management, etc, etc.</p>
+        <p>
+            The example for doing this can be found in MyClass.cs in the WeedKillerDevExample
+            project.&nbsp; It also includes code demonstrating how to optionally consume the
+            progress event.&nbsp; Note: the event will also report two variables of use: Size
+            and Size_Recovered.&nbsp; Size represents the physical file size (if applicable
+            to the event), and Size_Recovered will be either 0 if the file was not deleted,
+            or will match the file size if the file was deleted.&nbsp; The sum of these values
+            is useful for gauging the impact of the process.</p>
+        <p>
+            Some personal notes on the code:<ol>
+                <li>The WeedKillerConfig class itself uses attribute extensions for the Property Grid,
+                    demonstrating how simple it is to connect a configuration object to a user interface
+                    to maintain it.</li>
+                <li>Saving to, and reading from a file, as well as Copy and Paste functions, use serialization
+                    of objects.&nbsp; This allows the content of a configuration to be viewed in a text
+                    editor after using copy (Ctrl+C).</li>
+            </ol>
+        </p>
+        <a name="legal"></a>
+        <h4 style="border: 1px #0000DD; background-color: #DDDDFF;">
+            Legal</h4>
+        <p>
+            (c) 2009-2016, John J Schultz, all rights reserved.&nbsp; This software is covered
+            under the Microsoft Public License (see Help / About for the license).&nbsp; In addition to the terms of the license, the following
+            restriction applies:</p>
+        <ul>
+            <li>You must preserve all comments and evidence of copyright or authorship in any code
+                derived from it: you may only append any additional comments to what is already
+                there.&nbsp; Put simply, you can enhance or modify this code to suit your purpose,
+                but <i>you are not allowed to relabel my work as yours.</i></li>
+        </ul>
+        <h5>
+            Updated on 04/27/2012.</h5>
+</body>
+</html>

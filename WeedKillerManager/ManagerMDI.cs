@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using BOG.WeedKiller;
 using BOG.Framework;
 
-//  Copyright (c) 2009-2016, John J Schultz, all rights reserved.
+// Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 
 namespace WeedKillerManager
 {

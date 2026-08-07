@@ -10,7 +10,7 @@ namespace BOG.WeedKiller
 	/// <summary>
 	/// The main class providing the heavy lifting for aged file removal.
 	/// </summary>
-	public class WeedKiller
+	public class WeedKilling
 	{
 		private bool _AbortRequested = false;
 		private WeedKillerConfig _parameters;
@@ -31,7 +31,7 @@ namespace BOG.WeedKiller
 			set { _AbortRequested = value; }
 		}
 
-		public WeedKiller()
+		public WeedKilling()
 		{
 		}
 

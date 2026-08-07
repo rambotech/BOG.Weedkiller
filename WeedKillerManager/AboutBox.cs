@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.IO;
 
-//  Copyright (c) 2009-2016, John J Schultz, all rights reserved.
+// Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 
 namespace WeedKillerManager
 {

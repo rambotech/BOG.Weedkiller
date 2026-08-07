@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BOG.WeedKiller;  // Assembly: 
 
-//  Copyright (c) 2009-2016, John J Schultz, all rights reserved.
+// Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 
 namespace WeedKillerDevExample
 {
@@ -101,9 +101,9 @@ namespace WeedKillerDevExample
             config.RemoveEmptyFolders = false;
             config.TestOnly = true;
 
-            WeedKiller worker = new WeedKiller();
+			var worker = new WeedKilling();
 
-            try
+			try
             {
                 if (WantEvents)
                 {
