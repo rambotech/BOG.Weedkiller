@@ -7,7 +7,7 @@ using System.IO;
 using System.ComponentModel;    // so that WeedKillerConfig can be edited in a PropertyGrid.
 using BOG.Framework.Extensions;
 
-namespace BOG.WeedKiller
+namespace WeedKiller
 {
     /// <summary>
     /// Represents the properties necessary for one-execution of the KillWeeds() method.

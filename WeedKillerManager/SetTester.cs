@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +7,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using BOG.Framework;
-using BOG.WeedKiller;
+using WeedKiller;
 
 /*
  * Copyright (c) 2009-2016, John J Schultz, all rights reserved.
