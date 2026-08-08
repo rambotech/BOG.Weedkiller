@@ -1,4 +1,4 @@
-namespace BOG.WeedKiller
+namespace BOG.WeedKillerCommon
 {
 	/// <summary>
 	/// The properties provided by the Weed Killer progress event.

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using BOG.WeedKiller;  // Assembly: 
+using BOG.WeedKillerCommon;  // Assembly: 
 
 // John J Schultz, all rights reserved.
 
@@ -14,7 +14,7 @@ namespace BOG.WeedKillerExample
 		bool WantEvents = true;
 
 		// Implements the WeedKillerEventHandler, which gives progress reports as files and folders are processed.
-		// The WeedKilling class' worker method will always complete, even when it is denied access to files/folders.  
+		// The WeedKiller class' worker method will always complete, even when it is denied access to files/folders.  
 		// This event handler is completely optional in your application or service. If you need to log all or part 
 		// of Weed Killer's activity, this is how you would capture it.
 		static void WeedKillerEventProcessor(object sender, WeedKillerEventArgs e)
@@ -101,7 +101,7 @@ namespace BOG.WeedKillerExample
 			config.RemoveEmptyFolders = false;
 			config.TestOnly = true;
 
-			var worker = new WeedKilling();
+			var worker = new WeedKiller();
 
 			try
 			{

@@ -9,7 +9,7 @@ using System.IO;
 
 // Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     partial class AboutBox : Form
     {

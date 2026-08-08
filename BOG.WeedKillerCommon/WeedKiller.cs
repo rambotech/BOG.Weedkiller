@@ -2,7 +2,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using BOG.SwissArmyKnife.Extensions;
 
-namespace BOG.WeedKiller
+namespace BOG.WeedKillerCommon
 {
 	
 	public delegate void WeedKillerEventHandler(object sender, WeedKillerEventArgs e);
@@ -10,7 +10,7 @@ namespace BOG.WeedKiller
 	/// <summary>
 	/// The main class providing the heavy lifting for aged file removal.
 	/// </summary>
-	public class WeedKilling
+	public class WeedKiller
 	{
 		private bool _AbortRequested = false;
 		private WeedKillerConfig _parameters;
@@ -31,7 +31,7 @@ namespace BOG.WeedKiller
 			set { _AbortRequested = value; }
 		}
 
-		public WeedKilling()
+		public WeedKiller()
 		{
 		}
 

@@ -7,11 +7,11 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using BOG.SwissArmyKnife;
-using BOG.WeedKiller;
+using BOG.WeedKillerCommon;
 
 // Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     public partial class SetEditor : Form
     {
@@ -29,25 +29,29 @@ namespace BOG.WeedKillerManager
         private bool _Saved = true;
         private bool _NonOverridable_Shutdown = false;
 
-        public string StorageFolder
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("WinForms Security", "WFO1000:Missing code serialization configuration for property content", Justification = "<Pending>")]
+		public string StorageFolder
         {
             get { return _StorageFolder; }
             set { _StorageFolder = value; }
         }
 
-        public string ConfigurationFilePath
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("WinForms Security", "WFO1000:Missing code serialization configuration for property content", Justification = "<Pending>")]
+		public string ConfigurationFilePath
         {
             get { return _ConfigurationFilePath; }
             set { _ConfigurationFilePath = value; }
         }
 
-        public bool Saved
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public bool Saved
         {
             get { return _Saved; }
             set { _Saved = value; }
         }
 
-        public bool NonOverridable_Shutdown
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("WinForms Security", "WFO1000:Missing code serialization configuration for property content", Justification = "<Pending>")]
+		public bool NonOverridable_Shutdown
         {
             get { return _NonOverridable_Shutdown; }
             set { _NonOverridable_Shutdown = value; }

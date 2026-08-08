@@ -1,4 +1,4 @@
-namespace BOG.WeedKiller
+namespace BOG.WeedKillerCommon
 {
 	/// <summary>
 	/// A collection of WeedKillerConfig objects, with admin dates.  This is the object serialized and persisted

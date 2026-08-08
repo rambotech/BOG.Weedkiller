@@ -1,4 +1,4 @@
-//namespace BOG.WeedKillerManager
+//namespace BOG.WeedKillerManager.App
 //{
 //	internal static class Program
 //	{
@@ -22,7 +22,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic.ApplicationServices;
 
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
 	class SingleInstanceApplication : WindowsFormsApplicationBase
 	{

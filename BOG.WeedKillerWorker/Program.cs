@@ -1,4 +1,4 @@
-// WeedKilling.exe -- prune files according to an xml config file.
+// WeedKiller.exe -- prune files according to an xml config file.
 // The configuration file is built by the Weed Killer Manager.
 //
 // Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
@@ -31,18 +31,11 @@
 //   0 -- internal error
 //   1 -- successful completion
 
-using System;
-using System.Collections.Generic;
-using System.DirectoryServices.AccountManagement;
-using System.IO;
-using System.Reflection;
-using System.Security.AccessControl;
-using System.Text;
-using System.Text.RegularExpressions;
 using BOG.SwissArmyKnife;
-using BOG.WeedKiller;
+using BOG.WeedKillerCommon;
+using BOG.WeedKillerCommon.Migrated;
 
-namespace BOG.WeedKiller.Worker
+namespace BOG.WeedKillerWorker.App
 {
 	class Program
 	{
@@ -330,7 +323,7 @@ namespace BOG.WeedKiller.Worker
 					{
 						try
 						{
-							config = ObjectXMLSerializer<BOG.WeedKiller.WeedKillerConfigSet>.LoadDocumentFormat(FileName);
+							config = ObjectXMLSerializer<BOG.WeedKillerCommon.WeedKillerConfigSet>.LoadDocumentFormat(FileName);
 						}
 						catch (Exception ex)
 						{
@@ -373,7 +366,7 @@ namespace BOG.WeedKiller.Worker
 						Console.WriteLine();
 						Console.WriteLine("========================================================================");
 						Console.WriteLine("config file: {0}", ConfigFile);
-						config = ObjectXMLSerializer<BOG.WeedKiller.WeedKillerConfigSet>.LoadDocumentFormat(ConfigFile);
+						config = ObjectXMLSerializer<BOG.WeedKillerCommon.WeedKillerConfigSet>.LoadDocumentFormat(ConfigFile);
 						Console.WriteLine("    created: {0:F}", config.Created);
 						Console.WriteLine("    updated: {0:F}", config.Updated);
 						Console.WriteLine("    servers: {0}", config.ExecutionServer.Length == 0 ? "{any}" : config.ExecutionServer);
@@ -421,7 +414,7 @@ namespace BOG.WeedKiller.Worker
 											}
 										}
 
-										WeedKilling worker = new WeedKilling();
+										var worker = new WeedKiller();
 
 										try
 										{

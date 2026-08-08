@@ -17,16 +17,22 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 10.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
+    - name: Build Common
       run: |
-        dotnet build --no-restore -c release ./BOG.WeedKiller/BOG.WeedKiller.csproj
-    - name: NuGet package publish (BOG.WeedKiller)
+        dotnet build --no-restore -c release ./BOG.WeedKillerCommon/BOG.WeedKillerCommon.csproj
+    - name: Build Manager
+      run: |
+        dotnet build --no-restore -c release ./BOG.WeedKillerManager/BOG.WeedKillerManager.csproj
+    - name: Build Worker
+      run: |
+        dotnet build --no-restore -c release ./BOG.WeedKillerWorker/BOG.WeedKillerWorker.csproj
+    - name: NuGet package publish (BOG.WeedKillerCommon)
       if: github.event.ref == 'refs/heads/master'
       env:
         NGKEY: ${{ secrets.NUGET_API_KEY }}
         NGSRC: ${{ vars.NUGET_SOURCE }}
       run: |
-        dotnet nuget push ./BOG.WeedKiller/bin/release/BOG.WeedKiller.*.nupkg --api-key ${NGKEY} --source ${NGSRC} --skip-duplicate
+        dotnet nuget push ./BOG.WeedKillerCommon/bin/release/BOG.WeedKillerCommon.*.nupkg --api-key ${NGKEY} --source ${NGSRC} --skip-duplicate

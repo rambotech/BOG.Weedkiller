@@ -1,4 +1,4 @@
-﻿namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     /// <summary>
     /// 

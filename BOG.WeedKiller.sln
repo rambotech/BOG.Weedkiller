@@ -19,13 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOG.WeedKillerCommon", "BOG.WeedKiller\BOG.WeedKillerCommon.csproj", "{CE9BEC6B-5BA1-471D-AFF5-2CC4C4D10CB7}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__App", "__App", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Lib", "__Lib", "{C3EB6863-552F-4CA5-865E-2C59E2AB9EA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Example", "__Example", "{6ABC6140-5ED4-4C69-817B-3730F5E62D71}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOG.WeedKillerCommon", "BOG.WeedKillerCommon\BOG.WeedKillerCommon.csproj", "{CE9BEC6B-5BA1-471D-AFF5-2CC4C4D10CB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOG.WeedKillerExample", "BOG.WeedKillerExample\BOG.WeedKillerExample.csproj", "{1914AFA7-1335-4813-8F51-70217FC5A677}"
 EndProject

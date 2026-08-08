@@ -1,6 +1,6 @@
-﻿namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager
 {
-    partial class Permissions
+    partial class Permissions : IDisposable
     {
         /// <summary>
         /// Required designer variable.

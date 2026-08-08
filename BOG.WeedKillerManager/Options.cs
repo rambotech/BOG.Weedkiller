@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BOG.SwissArmyKnife;
 
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     public partial class Options : Form
     {

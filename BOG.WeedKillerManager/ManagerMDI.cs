@@ -9,12 +9,12 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Reflection;
 using System.Windows.Forms;
-using BOG.WeedKiller;
+using BOG.WeedKillerCommon;
 using BOG.SwissArmyKnife;
 
 // Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
 
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     public partial class ManagerMDI : Form
     {
@@ -272,7 +272,7 @@ namespace BOG.WeedKillerManager
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            SetEditor childForm = new SetEditor(ref _AppSettings);
+            SetEditor childForm = new SetEditor(_AppSettings);
             childForm.MdiParent = this;
             childForm.Text = "Untitled";
             childForm.Tag = null;

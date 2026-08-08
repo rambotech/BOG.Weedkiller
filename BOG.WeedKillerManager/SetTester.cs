@@ -6,9 +6,9 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using BOG.Framework;
-using BOG.WeedKiller;
-using WeedKiller;
+using BOG.SwissArmyKnife;
+using BOG.WeedKillerCommon;
+using BOG.WeedKillerCommon;
 
 /*
  * Copyright John J Schultz, usage restricted to terms of the Microsoft Public License.
@@ -23,7 +23,7 @@ using WeedKiller;
  *   - Added a counter to display the number of events are displayed.
  */
 
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     /// <summary>
     /// This is the tester for a configuration.  It is intended to operate as a modal window.
@@ -389,7 +389,8 @@ namespace BOG.WeedKillerManager
             TemplateHasChanged = false;
         }
 
-        public WeedKillerConfig config
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("WinForms Security", "WFO1000:Missing code serialization configuration for property content", Justification = "<Pending>")]
+		public WeedKillerConfig config
         {
             set
             {
@@ -400,7 +401,8 @@ namespace BOG.WeedKillerManager
             }
         }
 
-        public string ConfigurationFilePath
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string ConfigurationFilePath
         {
             set
             {
@@ -477,7 +479,7 @@ namespace BOG.WeedKillerManager
 
             AppendToScrollingTextbox(ref this.txtResults, string.Format("\r\n-- Process: {0}\r\n", workset.Description));
 
-			var worker = new WeedKilling();
+			var worker = new WeedKiller();
 			ItemEventCount = 0;
         }
 

@@ -1,28 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using BOG.SwissArmyKnife;
-using BOG.WeedKiller;
+using BOG.WeedKillerCommon;
+using BOG.WeedKillerCommon.Migrated;
 
 namespace BOG.WeedKillerManager
 {
     public partial class Permissions : Form
     {
-		private NTGroup g = new NTGroup();
         private SettingsDictionary AppSettings;
         private WeedKillerConfigSet cs = new WeedKillerConfigSet();
-        private string ServerName = string.Empty;
+        private NTGroup gx = new NTGroup();
+		private string ServerName = string.Empty;
 
         public Permissions(ref SettingsDictionary appSettings, ref WeedKillerConfigSet c1)
         {
             InitializeComponent();
             AppSettings = appSettings;
-            this.txtNTAccount.Text = (string)AppSettings.GetSetting("Permissions.NTAccount", string.Empty);
+            txtNTAccount.Text = (string)AppSettings.GetSetting("Permissions.NTAccount", string.Empty);
             foreach (WeedKillerConfig c in c1.ConfigSet) cs.ConfigSet.Add(c.CloneTyped());
         }
 
@@ -45,7 +38,7 @@ namespace BOG.WeedKillerManager
                     {
                         if (this.rbAddAccess.Checked)
                         {
-                            g.AddDirectorySecurity(e.Path, this.txtNTAccount.Text,
+							gx.AddDirectorySecurity(e.Path, this.txtNTAccount.Text,
                                     System.Security.AccessControl.FileSystemRights.ListDirectory |
                                     System.Security.AccessControl.FileSystemRights.Traverse |
                                     System.Security.AccessControl.FileSystemRights.Delete |
@@ -57,7 +50,7 @@ namespace BOG.WeedKillerManager
                         }
                         else
                         {
-                            g.RemoveDirectorySecurity(e.Path, this.txtNTAccount.Text,
+							gx.RemoveDirectorySecurity(e.Path, this.txtNTAccount.Text,
                                     System.Security.AccessControl.FileSystemRights.ListDirectory |
                                     System.Security.AccessControl.FileSystemRights.Traverse |
                                     System.Security.AccessControl.FileSystemRights.Delete |
@@ -101,7 +94,7 @@ namespace BOG.WeedKillerManager
             this.txtResults.Text = "Applying permission changes...";
             this.Refresh();
 
-            var worker = new WeedKilling();
+            var worker = new WeedKiller();
             try
             {
                 worker.WeedKillerEvent += new WeedKillerEventHandler(WeedKillerEventProcessor);

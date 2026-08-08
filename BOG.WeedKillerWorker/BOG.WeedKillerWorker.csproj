@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BOG.WeedKiller\BOG.WeedKiller.csproj" />
+    <ProjectReference Include="..\BOG.WeedKillerCommon\BOG.WeedKillerCommon.csproj" />
   </ItemGroup>
 
 </Project>

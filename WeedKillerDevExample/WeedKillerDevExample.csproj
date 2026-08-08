@@ -47,12 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WeedKiller\WeedKiller.csproj">
-      <Project>{BC9120A6-EB96-4E13-8A79-BEB9095563D6}</Project>
-      <Name>WeedKiller</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

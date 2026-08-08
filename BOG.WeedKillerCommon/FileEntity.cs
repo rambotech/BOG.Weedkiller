@@ -1,4 +1,4 @@
-namespace BOG.WeedKiller
+namespace BOG.WeedKillerCommon
 {
 	public class FileEntity
 	{

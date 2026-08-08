@@ -1,4 +1,4 @@
-namespace BOG.WeedKillerManager
+namespace BOG.WeedKillerManager.App
 {
     partial class AboutBox
     {
@@ -19,209 +19,216 @@ namespace BOG.WeedKillerManager
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.linkHomePage = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabLicense = new System.Windows.Forms.TabPage();
-            this.txtLicense = new System.Windows.Forms.TextBox();
-            this.tabTech = new System.Windows.Forms.TabPage();
-            this.pgInfo = new System.Windows.Forms.PropertyGrid();
-            this.tabReadMe = new System.Windows.Forms.TabPage();
-            this.txtReadMe = new System.Windows.Forms.TextBox();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabLicense.SuspendLayout();
-            this.tabTech.SuspendLayout();
-            this.tabReadMe.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(-3, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.AutoScrollMinSize = new System.Drawing.Size(199, 235);
-            this.splitContainer1.Panel1.Controls.Add(this.linkHomePage);
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnOK);
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(634, 274);
-            this.splitContainer1.SplitterDistance = 204;
-            this.splitContainer1.TabIndex = 33;
-            this.splitContainer1.Resize += new System.EventHandler(this.splitContainer1_Resize);
-            // 
-            // linkHomePage
-            // 
-            this.linkHomePage.AutoSize = true;
-            this.linkHomePage.Location = new System.Drawing.Point(34, 248);
-            this.linkHomePage.Name = "linkHomePage";
-            this.linkHomePage.Size = new System.Drawing.Size(144, 13);
-            this.linkHomePage.TabIndex = 49;
-            this.linkHomePage.TabStop = true;
-            this.linkHomePage.Tag = "http://www.bitsofgenius.com";
-            this.linkHomePage.Text = "http://www.bitsofgenius.com";
-            this.linkHomePage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHomePage_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WeedKillerManager.Properties.Resources.bogwf;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 235);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(263, 242);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(156, 24);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabLicense);
-            this.tabControl1.Controls.Add(this.tabTech);
-            this.tabControl1.Controls.Add(this.tabReadMe);
-            this.tabControl1.Location = new System.Drawing.Point(4, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(419, 232);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabLicense
-            // 
-            this.tabLicense.Controls.Add(this.txtLicense);
-            this.tabLicense.Location = new System.Drawing.Point(4, 22);
-            this.tabLicense.Name = "tabLicense";
-            this.tabLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLicense.Size = new System.Drawing.Size(411, 206);
-            this.tabLicense.TabIndex = 1;
-            this.tabLicense.Text = "License";
-            this.tabLicense.UseVisualStyleBackColor = true;
-            // 
-            // txtLicense
-            // 
-            this.txtLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLicense.Location = new System.Drawing.Point(3, 3);
-            this.txtLicense.Multiline = true;
-            this.txtLicense.Name = "txtLicense";
-            this.txtLicense.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLicense.Size = new System.Drawing.Size(405, 204);
-            this.txtLicense.TabIndex = 0;
-            this.txtLicense.Text = resources.GetString("txtLicense.Text");
-            // 
-            // tabTech
-            // 
-            this.tabTech.Controls.Add(this.pgInfo);
-            this.tabTech.Location = new System.Drawing.Point(4, 22);
-            this.tabTech.Name = "tabTech";
-            this.tabTech.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTech.Size = new System.Drawing.Size(411, 206);
-            this.tabTech.TabIndex = 0;
-            this.tabTech.Text = "Technical";
-            this.tabTech.UseVisualStyleBackColor = true;
-            // 
-            // pgInfo
-            // 
-            this.pgInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pgInfo.Location = new System.Drawing.Point(0, 0);
-            this.pgInfo.Name = "pgInfo";
-            this.pgInfo.Size = new System.Drawing.Size(411, 208);
-            this.pgInfo.TabIndex = 47;
-            this.pgInfo.ToolbarVisible = false;
-            // 
-            // tabReadMe
-            // 
-            this.tabReadMe.Controls.Add(this.txtReadMe);
-            this.tabReadMe.Location = new System.Drawing.Point(4, 22);
-            this.tabReadMe.Name = "tabReadMe";
-            this.tabReadMe.Size = new System.Drawing.Size(411, 206);
-            this.tabReadMe.TabIndex = 2;
-            this.tabReadMe.Text = "ReadMe.txt";
-            this.tabReadMe.UseVisualStyleBackColor = true;
-            // 
-            // txtReadMe
-            // 
-            this.txtReadMe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReadMe.Location = new System.Drawing.Point(4, 4);
-            this.txtReadMe.Multiline = true;
-            this.txtReadMe.Name = "txtReadMe";
-            this.txtReadMe.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtReadMe.Size = new System.Drawing.Size(403, 201);
-            this.txtReadMe.TabIndex = 0;
-            this.txtReadMe.WordWrap = false;
-            // 
-            // AboutBox
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 273);
-            this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MinimumSize = new System.Drawing.Size(579, 275);
-            this.Name = "AboutBox";
-            this.Padding = new System.Windows.Forms.Padding(9);
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About {0}";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabLicense.ResumeLayout(false);
-            this.tabLicense.PerformLayout();
-            this.tabTech.ResumeLayout(false);
-            this.tabReadMe.ResumeLayout(false);
-            this.tabReadMe.PerformLayout();
-            this.ResumeLayout(false);
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
+			splitContainer1 = new SplitContainer();
+			linkHomePage = new LinkLabel();
+			pictureBox1 = new PictureBox();
+			btnOK = new Button();
+			tabControl1 = new TabControl();
+			tabLicense = new TabPage();
+			txtLicense = new TextBox();
+			tabTech = new TabPage();
+			pgInfo = new PropertyGrid();
+			tabReadMe = new TabPage();
+			txtReadMe = new TextBox();
+			((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+			splitContainer1.Panel1.SuspendLayout();
+			splitContainer1.Panel2.SuspendLayout();
+			splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+			tabControl1.SuspendLayout();
+			tabLicense.SuspendLayout();
+			tabTech.SuspendLayout();
+			tabReadMe.SuspendLayout();
+			SuspendLayout();
+			// 
+			// splitContainer1
+			// 
+			splitContainer1.Dock = DockStyle.Fill;
+			splitContainer1.IsSplitterFixed = true;
+			splitContainer1.Location = new Point(10, 10);
+			splitContainer1.Margin = new Padding(4, 3, 4, 3);
+			splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			splitContainer1.Panel1.AutoScroll = true;
+			splitContainer1.Panel1.AutoScrollMinSize = new Size(199, 235);
+			splitContainer1.Panel1.Controls.Add(linkHomePage);
+			splitContainer1.Panel1.Controls.Add(pictureBox1);
+			// 
+			// splitContainer1.Panel2
+			// 
+			splitContainer1.Panel2.Controls.Add(btnOK);
+			splitContainer1.Panel2.Controls.Add(tabControl1);
+			splitContainer1.Size = new Size(717, 294);
+			splitContainer1.SplitterDistance = 194;
+			splitContainer1.SplitterWidth = 5;
+			splitContainer1.TabIndex = 33;
+			splitContainer1.Resize += splitContainer1_Resize;
+			// 
+			// linkHomePage
+			// 
+			linkHomePage.AutoSize = true;
+			linkHomePage.Location = new Point(18, 241);
+			linkHomePage.Margin = new Padding(4, 0, 4, 0);
+			linkHomePage.Name = "linkHomePage";
+			linkHomePage.Size = new Size(164, 15);
+			linkHomePage.TabIndex = 49;
+			linkHomePage.TabStop = true;
+			linkHomePage.Tag = "http://www.bitsofgenius.com";
+			linkHomePage.Text = "http://www.bitsofgenius.com";
+			linkHomePage.LinkClicked += linkHomePage_LinkClicked;
+			// 
+			// pictureBox1
+			// 
+			pictureBox1.Dock = DockStyle.Top;
+			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+			pictureBox1.Location = new Point(0, 0);
+			pictureBox1.Margin = new Padding(4, 3, 4, 3);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(199, 271);
+			pictureBox1.TabIndex = 1;
+			pictureBox1.TabStop = false;
+			pictureBox1.Click += pictureBox1_Click;
+			// 
+			// btnOK
+			// 
+			btnOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			btnOK.Location = new Point(328, 257);
+			btnOK.Margin = new Padding(4, 3, 4, 3);
+			btnOK.Name = "btnOK";
+			btnOK.Size = new Size(182, 28);
+			btnOK.TabIndex = 1;
+			btnOK.Text = "OK";
+			btnOK.UseVisualStyleBackColor = true;
+			btnOK.Click += btnOK_Click;
+			// 
+			// tabControl1
+			// 
+			tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			tabControl1.Controls.Add(tabLicense);
+			tabControl1.Controls.Add(tabTech);
+			tabControl1.Controls.Add(tabReadMe);
+			tabControl1.Location = new Point(5, 5);
+			tabControl1.Margin = new Padding(4, 3, 4, 3);
+			tabControl1.Name = "tabControl1";
+			tabControl1.SelectedIndex = 0;
+			tabControl1.Size = new Size(510, 246);
+			tabControl1.TabIndex = 0;
+			// 
+			// tabLicense
+			// 
+			tabLicense.Controls.Add(txtLicense);
+			tabLicense.Location = new Point(4, 24);
+			tabLicense.Margin = new Padding(4, 3, 4, 3);
+			tabLicense.Name = "tabLicense";
+			tabLicense.Padding = new Padding(4, 3, 4, 3);
+			tabLicense.Size = new Size(502, 218);
+			tabLicense.TabIndex = 1;
+			tabLicense.Text = "License";
+			tabLicense.UseVisualStyleBackColor = true;
+			// 
+			// txtLicense
+			// 
+			txtLicense.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			txtLicense.Location = new Point(4, 3);
+			txtLicense.Margin = new Padding(4, 3, 4, 3);
+			txtLicense.Multiline = true;
+			txtLicense.Name = "txtLicense";
+			txtLicense.ScrollBars = ScrollBars.Vertical;
+			txtLicense.Size = new Size(493, 213);
+			txtLicense.TabIndex = 0;
+			txtLicense.Text = resources.GetString("txtLicense.Text");
+			// 
+			// tabTech
+			// 
+			tabTech.Controls.Add(pgInfo);
+			tabTech.Location = new Point(4, 24);
+			tabTech.Margin = new Padding(4, 3, 4, 3);
+			tabTech.Name = "tabTech";
+			tabTech.Padding = new Padding(4, 3, 4, 3);
+			tabTech.Size = new Size(481, 240);
+			tabTech.TabIndex = 0;
+			tabTech.Text = "Technical";
+			tabTech.UseVisualStyleBackColor = true;
+			// 
+			// pgInfo
+			// 
+			pgInfo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			pgInfo.BackColor = SystemColors.Control;
+			pgInfo.Location = new Point(0, 0);
+			pgInfo.Margin = new Padding(4, 3, 4, 3);
+			pgInfo.Name = "pgInfo";
+			pgInfo.Size = new Size(479, 240);
+			pgInfo.TabIndex = 47;
+			pgInfo.ToolbarVisible = false;
+			// 
+			// tabReadMe
+			// 
+			tabReadMe.Controls.Add(txtReadMe);
+			tabReadMe.Location = new Point(4, 24);
+			tabReadMe.Margin = new Padding(4, 3, 4, 3);
+			tabReadMe.Name = "tabReadMe";
+			tabReadMe.Size = new Size(481, 240);
+			tabReadMe.TabIndex = 2;
+			tabReadMe.Text = "ReadMe.txt";
+			tabReadMe.UseVisualStyleBackColor = true;
+			// 
+			// txtReadMe
+			// 
+			txtReadMe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			txtReadMe.Location = new Point(5, 5);
+			txtReadMe.Margin = new Padding(4, 3, 4, 3);
+			txtReadMe.Multiline = true;
+			txtReadMe.Name = "txtReadMe";
+			txtReadMe.ScrollBars = ScrollBars.Both;
+			txtReadMe.Size = new Size(469, 231);
+			txtReadMe.TabIndex = 0;
+			txtReadMe.WordWrap = false;
+			// 
+			// AboutBox
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(737, 314);
+			Controls.Add(splitContainer1);
+			FormBorderStyle = FormBorderStyle.FixedSingle;
+			Margin = new Padding(4, 3, 4, 3);
+			MinimumSize = new Size(753, 353);
+			Name = "AboutBox";
+			Padding = new Padding(10, 10, 10, 10);
+			ShowIcon = false;
+			ShowInTaskbar = false;
+			StartPosition = FormStartPosition.CenterParent;
+			Text = "About {0}";
+			splitContainer1.Panel1.ResumeLayout(false);
+			splitContainer1.Panel1.PerformLayout();
+			splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+			splitContainer1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+			tabControl1.ResumeLayout(false);
+			tabLicense.ResumeLayout(false);
+			tabLicense.PerformLayout();
+			tabTech.ResumeLayout(false);
+			tabReadMe.ResumeLayout(false);
+			tabReadMe.PerformLayout();
+			ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkHomePage;
         private System.Windows.Forms.TabControl tabControl1;
