@@ -2,6 +2,9 @@ Weed Killer
 ===========
 
 Version History: -------------------------------------------------------
+v2.0.0.0 -- August 7, 2026
+  - Updated to .NET 10.0
+
 v1.1.0.3 -- May 5, 2023
   - Add github workflow
   - .NET 4.8 to 4.8.1
