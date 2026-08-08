@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ "develop", "release", "master" ]
+    branches: [ "release", "master" ]
 
 defaults:
   run:
