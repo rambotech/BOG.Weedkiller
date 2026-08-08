@@ -14,12 +14,13 @@ namespace BOG.WeedKillerManager.App
     partial class AboutBox : Form
     {
         WinAppInfo x = new WinAppInfo();
-        int SplitterPosition = 0;
+		AssemblyVersion av;
+		int SplitterPosition = 0;
 
         public AboutBox()
         {
             InitializeComponent();
-            var av = new AssemblyVersion(SwissArmyKnife.AssemblyVersion.AssemblySource.Executing);
+            av = new AssemblyVersion(SwissArmyKnife.AssemblyVersion.AssemblySource.Executing);
 
             x.AssemblyVersion = av.Version;
             x.Copyright = AssemblyCopyright;
@@ -33,7 +34,7 @@ namespace BOG.WeedKillerManager.App
             SplitterPosition = this.splitContainer1.SplitterDistance;
             this.Text = string.Format(this.Text, x.ProductName);
 
-            string ReadMeFile = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(x.FullPath)), "Read_Me.txt");
+            string ReadMeFile = Path.Combine(Path.GetDirectoryName(av.Filename), "Read_Me.txt");
             if (File.Exists(ReadMeFile))
             {
                 try
@@ -70,7 +71,7 @@ namespace BOG.WeedKillerManager.App
                         return titleAttribute.Title;
                     }
                 }
-                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+                return x.Title;
             }
         }
 

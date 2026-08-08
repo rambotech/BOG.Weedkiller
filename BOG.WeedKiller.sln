@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOG.WeedKillerWorker", "BOG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOG.WeedKillerManager", "BOG.WeedKillerManager\BOG.WeedKillerManager.csproj", "{9C60FA9C-6471-4000-9964-0143D84B1BBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOG.WeedKillerCommon", "BOG.WeedKillerCommon\BOG.WeedKillerCommon.csproj", "{51C88176-938C-4604-A41B-814CE00C7A99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,14 @@ Global
 		{9C60FA9C-6471-4000-9964-0143D84B1BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C60FA9C-6471-4000-9964-0143D84B1BBD}.Release|x86.ActiveCfg = Release|Any CPU
 		{9C60FA9C-6471-4000-9964-0143D84B1BBD}.Release|x86.Build.0 = Release|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Debug|x86.Build.0 = Debug|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Release|x86.ActiveCfg = Release|Any CPU
+		{51C88176-938C-4604-A41B-814CE00C7A99}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +82,7 @@ Global
 		{1914AFA7-1335-4813-8F51-70217FC5A677} = {6ABC6140-5ED4-4C69-817B-3730F5E62D71}
 		{469B2D32-D0D4-4545-B540-FB3CC51FDDCA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{9C60FA9C-6471-4000-9964-0143D84B1BBD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{51C88176-938C-4604-A41B-814CE00C7A99} = {C3EB6863-552F-4CA5-865E-2C59E2AB9EA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F297E648-71C0-4A92-8402-2865B2FDB9F8}

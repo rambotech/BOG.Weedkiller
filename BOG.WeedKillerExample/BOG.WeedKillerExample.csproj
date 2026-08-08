@@ -10,4 +10,8 @@
     <PackageReference Include="BOG.SwissArmyKnife" Version="1.15.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BOG.WeedKillerCommon\BOG.WeedKillerCommon.csproj" />
+  </ItemGroup>
+
 </Project>

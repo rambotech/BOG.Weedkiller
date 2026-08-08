@@ -57,7 +57,7 @@ namespace BOG.WeedKillerManager.App
 
 		void SingleInstanceApplication_Startup(object sender, StartupEventArgs eventArgs)
 		{
-			this.MainForm = new ManagerMDI(null);
+			this.MainForm = new ManagerMDI(new string[] { });
 			foreach (string s in eventArgs.CommandLine)
 			{
 				foreach (string ThisFileName in Directory.GetFiles(Path.GetDirectoryName(s), Path.GetFileName(s), SearchOption.TopDirectoryOnly))
